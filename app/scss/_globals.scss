@@ -1,0 +1,176 @@
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+//Headings
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  font-weight: 300;
+  line-height: 1;
+  color: $darkBlue;
+  margin: 0;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+
+  @include breakpoint-up(large) {
+    font-size: $font-xlg;
+  }
+}
+
+h2 {
+  margin-bottom: 2.5rem;
+  font-size: 3rem;
+
+  @include breakpoint-up(large) {
+    font-size: 3.6rem;
+    margin-bottom: 3rem;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Public Sans', sans-serif;
+  line-height: 1.3;
+  font-size: $font-sm;
+  font-weight: 300;
+  color: $grayishBlue;
+  // min-height: 300vh;
+  overflow-x: hidden;
+
+  @include breakpoint-up(large) {
+    font-size: $font-med;
+  }
+}
+
+//Spacing
+.container {
+  max-width: 111rem;
+  margin: 0 auto;
+
+  &--nav {
+    padding: 1rem 0;
+  }
+
+  &--pt {
+    padding-top: 7rem;
+    @include breakpoint-up(large) {
+      padding-top: 9.6rem;
+    }
+  }
+  &--pb {
+    padding-bottom: 7rem;
+    padding-bottom: 9.6rem;
+    @include breakpoint-up(large) {
+      padding-bottom: 9.6rem;
+    }
+  }
+  &--pl {
+    padding-left: 2.4rem;
+  }
+  &--pr {
+    padding-right: 2.4rem;
+  }
+
+  &--py {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    @include breakpoint-up(large) {
+      padding-top: 9.6rem;
+      padding-bottom: 9.6rem;
+    }
+  }
+
+  &--px {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+
+  &--pall {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+
+    @include breakpoint-up(large) {
+      padding-top: 9.6rem;
+      padding-bottom: 9.6rem;
+    }
+  }
+}
+
+//flexbox
+.flex {
+  display: flex;
+
+  &--fd-c {
+    flex-direction: column;
+  }
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+//BUTTON
+
+button,
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-image: linear-gradient(90deg, $limeGreen, $brightCyan);
+  border: none;
+  border-radius: 1rem;
+  color: $white;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 1.6rem;
+  transition: transform, opacity 0.4s;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+//Visibility
+.hide-for-mobile {
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}

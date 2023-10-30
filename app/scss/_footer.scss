@@ -1,0 +1,119 @@
+.footer {
+  text-align: center;
+  background-color: $darkBlue;
+  color: $white;
+  padding: 4rem;
+
+  .container {
+    @include breakpoint-up(large) {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 3fr;
+      grid-template-rows: 1fr auto;
+      grid-template-areas: 'logo links1 links2 cta' 'social links1 links2 copyright';
+      gap: 1rem;
+      justify-items: start;
+    }
+  }
+
+  a {
+    color: $white;
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-bottom: 2rem;
+
+    @include breakpoint-up(large) {
+      grid-area: logo;
+    }
+
+    @include breakpoint-down(medium) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__social {
+    margin-bottom: 1rem;
+    a:not(:last-child) {
+      display: inline-block;
+      margin-right: 1rem;
+    }
+
+    @include breakpoint-up(large) {
+      grid-area: social;
+      align-self: end;
+    }
+
+    @include breakpoint-down(medium) {
+      margin-bottom: 2rem;
+    }
+
+    svg path {
+      transition: fill 0.2s;
+    }
+
+    a:hover svg path {
+      fill: $limeGreen;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+    transition: all .2s;
+
+    @include breakpoint-up(large) {
+      justify-content: space-between;
+      align-items: start;
+    }
+
+    &.col1 {
+      @include breakpoint-up(large) {
+        grid-area: links1;
+      }
+    }
+    &.col2 {
+      @include breakpoint-up(large) {
+        grid-area: links2;
+      }
+
+      @include breakpoint-down(medium) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    a {
+      @include breakpoint-down(medium) {
+        line-height: 2.25;
+      }
+    }
+
+    a:hover {
+      color: $limeGreen;
+    }
+  }
+
+  &__cta {
+    @include breakpoint-up(large) {
+      grid-area: cta;
+      text-align: right;
+      justify-self: end;
+    }
+    a.button {
+      margin: 2rem 0;
+      @include breakpoint-down(medium) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  &__copyright {
+    font-size: 1.3rem;
+    @include breakpoint-up(large) {
+      grid-area: copyright;
+      align-self: end;
+      justify-self: end;
+    }
+  }
+}

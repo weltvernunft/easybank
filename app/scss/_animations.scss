@@ -1,0 +1,81 @@
+//Display props
+.has-fade {
+  visibility: hidden;
+}
+
+.turned-off {
+  display: none;
+}
+
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.3s ease-in-out forwards;
+}
+
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  animation: fade-out 0.3s ease-in-out forwards;
+}
+
+@keyframes item-appear {
+  from {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.item-appear {
+  animation: item-appear 0.2s ease-in-out forwards;
+}
+
+.item-1 {
+  animation-delay: 0.1s;
+  transform: translateX(-400%);
+}
+.item-2 {
+    animation-delay: 0.2s;
+    transform: translateX(-400%);
+}
+.item-3 {
+    animation-delay: 0.3s;
+    transform: translateX(-400%);
+}
+.item-4 {
+    animation-delay: 0.4s;
+    transform: translateX(-400%);
+}
+.item-5 {
+    animation-delay: 0.5s;
+    transform: translateX(-400%);
+}
